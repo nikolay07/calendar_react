@@ -128,9 +128,13 @@ class Popup extends Component {
             <span
               className="popup__action_delete"
               data-id="913"
-              style={{ visibility: "hidden" }}
+              style={{ visibility: "visible" }}
             >
-              <i className="fas fa-trash-alt" />
+              <i
+                className="fa fa-trash fa-2x"
+                aria-hidden="true"
+                onClick={onPopupSwitcher}
+              ></i>
             </span>
             <button className="popup__action_save" type="submit">
               Create
