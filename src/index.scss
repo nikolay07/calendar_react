@@ -1,0 +1,17 @@
+@import "./styles/variables.scss";
+@import "./styles/header.scss";
+@import "./styles/event.scss";
+@import "./styles/popup.scss";
+@import "./styles/redLine.scss";
+@import "./styles/variables.scss";
+@import "./styles/calendar.scss";
+@import "./styles/timescale.scss";
+@import "./styles/days.scss";
+
+timescale * {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Google Sans", Roboto, Arial, sans-serif;
+}

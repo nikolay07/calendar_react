@@ -1,0 +1,71 @@
+@import "./variables.scss";
+
+.header {
+  width: 100vw;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(155, 154, 154, 0.75);
+  position: fixed;
+  background-color: $white;
+  z-index: 9999;
+
+  &__button_create {
+    width: 120px;
+    height: 40px;
+    border-radius: 20px;
+    margin-left: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    color: $dark-violet-blue;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    background-color: $white;
+    outline: none;
+    border: 1px solid $dark-violet-blue;
+
+    .fa-plus {
+      font-size: 25px;
+      background: $dark-violet-blue;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+  }
+
+  &__button_today {
+    width: 100px;
+    height: 35px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid $dark-violet-blue;
+    background-color: $text-white;
+    color: $dark-violet-blue;
+    margin-left: 40px;
+    outline: none;
+    font-weight: 500;
+  }
+
+  &__week-toggle {
+    &_chevron-left {
+      margin-left: 30px;
+    }
+
+    &_chevron-right {
+      margin-left: 20px;
+    }
+
+    .chevron {
+      font-size: 15px;
+      color: $dark-violet-blue;
+      cursor: pointer;
+    }
+  }
+
+  &__current-month-year {
+    font-size: 20px;
+    margin-left: 30px;
+    font-weight: 500;
+    color: $black;
+  }
+}
