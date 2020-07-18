@@ -1,11 +1,11 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import { createPopup } from "../common/popUp";
 import "./PopUp.scss";
-// import PropTypes, { bool } from "prop-types";
 
 class Popup extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       title: "",
       dateStart: "",
@@ -38,14 +38,7 @@ class Popup extends Component {
   };
 
   render() {
-    const {
-      title,
-      colorEvent,
-      dateStart,
-      timeStart,
-      timeEnd,
-      description,
-    } = this.state;
+    const { title, colorEvent, dateStart, timeStart, timeEnd, description } = this.state;
     const { onPopupSwitcher } = this.props;
     return (
       <div className="popup-modal">
@@ -54,6 +47,10 @@ class Popup extends Component {
             <i
               className="fas fa-times popup__header_close-btn"
               onClick={onPopupSwitcher}
+              onKeyPress={() => {}}
+              aria-label="Create"
+              role="button"
+              tabIndex="0"
             />
             <input
               className="popup__header_title-input"
@@ -67,9 +64,7 @@ class Popup extends Component {
           </div>
           <div className="popup__color-scheme">
             <div className="popup__color-scheme_label">
-              <span className="popup__color-scheme_label-text">
-                Color event
-              </span>
+              <span className="popup__color-scheme_label-text">Color event</span>
               <input
                 className="popup__color-scheme_chooser"
                 type="color"
@@ -126,16 +121,8 @@ class Popup extends Component {
           </div>
 
           <div className="popup__action">
-            <span
-              className="popup__action_delete"
-              data-id="913"
-              style={{ visibility: "visible" }}
-            >
-              <i
-                className="fa fa-trash fa-2x"
-                aria-hidden="true"
-                onClick={onPopupSwitcher}
-              ></i>
+            <span className="popup__action_delete" data-id="913" style={{ visibility: "visible" }}>
+              <i className="fa fa-trash fa-2x" aria-hidden="true" onClick={onPopupSwitcher} />
             </span>
             <button className="popup__action_save" type="submit">
               Create
@@ -149,8 +136,7 @@ class Popup extends Component {
 
 export default Popup;
 
-// Popup.propTypes = {
-//   onSaveEvent: PropTypes.func,
-//   onPopupSwitcher: PropTypes.func,
-//   isShown: bool,
-// };
+Popup.propTypes = {
+  onSaveEvent: PropTypes.func.isRequired,
+  onPopupSwitcher: PropTypes.func.isRequired,
+};

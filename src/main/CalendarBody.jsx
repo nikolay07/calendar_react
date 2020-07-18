@@ -1,6 +1,6 @@
 import React from "react";
 import "./Calendar.scss";
-// import PropTypes from "prop-types";
+import PropTypes from "prop-types";
 import CalendarDay from "./CalendarDay";
 
 import { filterEventsByDay } from "../common/events";
@@ -26,9 +26,13 @@ const CalendarBody = ({ week, events, onShowPopup, onDeleteEvent }) => {
 
 export default CalendarBody;
 
-// CalendarBody.propTypes = {
-//   week: PropTypes.array,
-//   onDeleteEvent: PropTypes.func,
-//   onShowPopup: PropTypes.func,
-//   events: PropTypes.array,
-// };
+CalendarBody.propTypes = {
+  week: PropTypes.arrayOf(PropTypes.shape).isRequired,
+  onDeleteEvent: PropTypes.func.isRequired,
+  onShowPopup: PropTypes.arrayOf(PropTypes.shape),
+  events: PropTypes.arrayOf(PropTypes.shape),
+};
+CalendarBody.defaultProps = {
+  onShowPopup: [],
+  events: [],
+};

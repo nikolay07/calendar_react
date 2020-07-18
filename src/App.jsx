@@ -33,9 +33,7 @@ class App extends Component {
       new Date(newEvent.dateStart).setHours(+timeStart[0], +timeStart[1])
     );
     const timeEnd = newEvent.timeEnd.split(":");
-    newEvent.dateEnd = new Date(
-      new Date(newEvent.dateEnd).setHours(+timeEnd[0], +timeEnd[1])
-    );
+    newEvent.dateEnd = new Date(new Date(newEvent.dateEnd).setHours(+timeEnd[0], +timeEnd[1]));
 
     if (newEvent.title === "") {
       newEvent.title = "NEW EVENT";

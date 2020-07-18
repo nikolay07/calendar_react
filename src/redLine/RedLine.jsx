@@ -1,9 +1,10 @@
 import React, { Component } from "react";
+
 import "./RedLine.scss";
 
 class RedLine extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       currentMinute: new Date().getMinutes() - 4,
     };

@@ -1,8 +1,7 @@
-import "./WeekDays.scss";
 import React from "react";
 import moment from "moment";
-
-// import PropTypes from "prop-types";
+import PropTypes from "prop-types";
+import "./WeekDays.scss";
 
 const Day = ({ day }) => {
   const dayDate = new Date(day).getDate();
@@ -23,6 +22,6 @@ const Day = ({ day }) => {
 
 export default Day;
 
-// Day.propTypes = {
-//   day: PropTypes.object,
-// };
+Day.propTypes = {
+  day: PropTypes.objectOf(PropTypes.shape).isRequired,
+};

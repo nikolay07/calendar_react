@@ -2,16 +2,8 @@ export const createPopup = () => {
   const date = new Date();
   const newEvent = {};
   newEvent.title = "";
-  newEvent.dateStart = date
-    .toLocaleDateString()
-    .split(".")
-    .reverse()
-    .join("-");
-  newEvent.dateEnd = date
-    .toLocaleDateString()
-    .split(".")
-    .reverse()
-    .join("-");
+  newEvent.dateStart = date.toLocaleDateString().split(".").reverse().join("-");
+  newEvent.dateEnd = date.toLocaleDateString().split(".").reverse().join("-");
   if (date.getHours() === 23) {
     newEvent.timeStart = `${date.getHours()}:00`;
     newEvent.timeEnd = `${date.getHours()}:59`;

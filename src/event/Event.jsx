@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./Event.scss";
-// import PropTypes from "prop-types";
+import PropTypes from "prop-types";
 import DeletePopUp from "../popup/DeletePopUp";
 
 class Event extends Component {
@@ -19,8 +19,7 @@ class Event extends Component {
   render() {
     const { event, id, onDeleteEvent } = this.props;
     const { deletePopup } = this.state;
-    const height =
-      (new Date(event.dateEnd) - new Date(event.dateStart)) / 1000 / 60;
+    const height = (new Date(event.dateEnd) - new Date(event.dateStart)) / 1000 / 60;
     const marginTop = new Date(event.dateStart).getMinutes();
     const styles = {
       height: `${height}px`,
@@ -47,11 +46,11 @@ class Event extends Component {
           className="day-event"
           id={id}
           onClick={(e) => this.showPopup(e)}
+          onKeyPress={() => {}}
+          role="button"
+          tabIndex="0"
         >
-          {deletePopup && (
-            <DeletePopUp eventId={id} onDeleteEvent={onDeleteEvent} />
-          )}
-
+          {deletePopup && <DeletePopUp eventId={id} onDeleteEvent={onDeleteEvent} />}
           <span className="day-event-text">{event.title}</span>
           <br />
           <span className="day-event-text">{`${hoursStart}:${minutesStart} - ${hoursEnd}:${minutesEnd}`}</span>
@@ -63,8 +62,8 @@ class Event extends Component {
 
 export default Event;
 
-// Event.propTypes = {
-//   onDeleteEvent: PropTypes.func,
-//   id: PropTypes.string,
-//   event: PropTypes.object,
-// };
+Event.propTypes = {
+  onDeleteEvent: PropTypes.func.isRequired,
+  id: PropTypes.string.isRequired,
+  event: PropTypes.shape.isRequired,
+};

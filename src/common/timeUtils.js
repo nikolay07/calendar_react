@@ -11,7 +11,7 @@ export const generateNumbers = (from, to) => {
 export const getStartOfWeek = () => {
   const dayOfWeek = new Date();
   let monday = null;
-  for (let i = 0; i <= 7; i++) {
+  for (let i = 0; i <= 7; i += 1) {
     if (dayOfWeek.getDay() !== 1) {
       dayOfWeek.setDate(dayOfWeek.getDate() - 1);
     } else {
@@ -47,12 +47,12 @@ export const getDisplayedMonthes = (week) => {
 };
 
 export const getDisplayedMonth = (week) => {
-  let displayedMonth = [];
-  let displayedYear = [];
+  const displayedMonth = [];
+  const displayedYear = [];
   let result;
-  for (let i = 0; i < week.length; i++) {
-    let month = week[i].toDateString().split(" ")[1];
-    let year = week[i].toDateString().split(" ")[3];
+  for (let i = 0; i < week.length; i += 1) {
+    const month = week[i].toDateString().split(" ")[1];
+    const year = week[i].toDateString().split(" ")[3];
 
     if (displayedMonth.indexOf(month) === -1) {
       displayedMonth.push(month);

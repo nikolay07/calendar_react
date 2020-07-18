@@ -1,8 +1,7 @@
 import React from "react";
+import PropTypes from "prop-types";
 import "./Header.scss";
 import { getDisplayedMonth } from "../common/timeUtils";
-
-// import PropTypes from "prop-types";
 
 const Header = ({ week, onToday, nextWeek, prewWeek, onCreateEvent }) => {
   const currentMonth = getDisplayedMonth(week);
@@ -21,10 +20,22 @@ const Header = ({ week, onToday, nextWeek, prewWeek, onCreateEvent }) => {
         Today
       </button>
       <div className="header__week-toggle">
-        <span onClick={prewWeek} className="header__week-toggle_chevron-left">
+        <span
+          onClick={prewWeek}
+          onKeyPress={() => {}}
+          role="button"
+          tabIndex="0"
+          className="header__week-toggle_chevron-left"
+        >
           <i className="fas fa-chevron-left chevron" />
         </span>
-        <span onClick={nextWeek} className="header__week-toggle_chevron-right">
+        <span
+          onClick={nextWeek}
+          onKeyPress={() => {}}
+          role="button"
+          tabIndex="0"
+          className="header__week-toggle_chevron-right"
+        >
           <i className="fas fa-chevron-right chevron" />
         </span>
       </div>
@@ -35,10 +46,10 @@ const Header = ({ week, onToday, nextWeek, prewWeek, onCreateEvent }) => {
 
 export default Header;
 
-// Header.propTypes = {
-//   week: PropTypes.array,
-//   onCreateEvent: PropTypes.func,
-//   onToday: PropTypes.func,
-//   nextWeek: PropTypes.func,
-//   prewWeek: PropTypes.func,
-// };
+Header.propTypes = {
+  week: PropTypes.arrayOf(PropTypes.shape).isRequired,
+  onCreateEvent: PropTypes.func.isRequired,
+  onToday: PropTypes.func.isRequired,
+  nextWeek: PropTypes.func.isRequired,
+  prewWeek: PropTypes.func.isRequired,
+};

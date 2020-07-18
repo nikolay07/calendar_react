@@ -1,10 +1,16 @@
 import React from "react";
+import PropTypes from "prop-types";
 import "./DeletePopUp.scss";
-// import PropTypes from "prop-types";
 
 const DeletePopUp = ({ eventId, onDeleteEvent }) => {
   return (
-    <div onClick={() => onDeleteEvent(eventId)} className="day-event_delete">
+    <div
+      onClick={() => onDeleteEvent(eventId)}
+      className="day-event_delete"
+      onKeyPress={() => {}}
+      role="button"
+      tabIndex="0"
+    >
       <i className="fa fa-trash" aria-hidden="true">
         <span className="day-event_delete_text">Удалить</span>
       </i>
@@ -14,7 +20,7 @@ const DeletePopUp = ({ eventId, onDeleteEvent }) => {
 
 export default DeletePopUp;
 
-// DeletePopUp.propTypes = {
-//   eventId: PropTypes.string,
-//   onDeleteEvent: PropTypes.func,
-// };
+DeletePopUp.propTypes = {
+  eventId: PropTypes.string.isRequired,
+  onDeleteEvent: PropTypes.func.isRequired,
+};
