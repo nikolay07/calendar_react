@@ -1,4 +1,5 @@
 import React from "react";
+import "./Header.scss";
 import { getDisplayedMonth } from "../common/timeUtils";
 
 // import PropTypes from "prop-types";

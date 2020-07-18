@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./RedLine.scss";
 
 class RedLine extends Component {
   constructor() {
@@ -25,10 +26,7 @@ class RedLine extends Component {
   render() {
     const { currentMinute } = this.state;
     return (
-      <div
-        className="redline"
-        style={{ marginTop: `${currentMinute}px` }}
-      >
+      <div className="redline" style={{ marginTop: `${currentMinute}px` }}>
         <div className="circle" />
         <div className="line" />
       </div>

@@ -1,6 +1,7 @@
 import React from "react";
+import "./Calendar.scss";
 // import PropTypes from "prop-types";
-import Event from "./Event";
+import Event from "../event/Event";
 import RedLine from "../redLine/RedLine";
 
 const CalendarHour = ({ event, date, hour, onDeleteEvent }) => {
@@ -13,11 +14,7 @@ const CalendarHour = ({ event, date, hour, onDeleteEvent }) => {
       {redLine && <RedLine key={date} />}
 
       {event && (
-        <Event
-          event={event}
-          onDeleteEvent={onDeleteEvent}
-          id={event.id}
-        />
+        <Event event={event} onDeleteEvent={onDeleteEvent} id={event.id} />
       )}
     </div>
   );

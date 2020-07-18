@@ -1,14 +1,10 @@
 import React, { Component } from "react";
 import Header from "./header/Header";
-import Week from "./week/Week";
+import Week from "./weekDays/Week";
 import Main from "./main/Main";
 import Popup from "./popup/PopUp";
 import { getStartOfWeek, generateWeek } from "./common/timeUtils";
-import {
-  deleteEvent,
-  saveEvent,
-  fetchEvents,
-} from "./common/eventsGateWays";
+import { deleteEvent, saveEvent, fetchEvents } from "./common/eventsGateWays";
 
 class App extends Component {
   constructor() {
@@ -34,10 +30,7 @@ class App extends Component {
     const newEvent = event;
     const timeStart = newEvent.timeStart.split(":");
     newEvent.dateStart = new Date(
-      new Date(newEvent.dateStart).setHours(
-        +timeStart[0],
-        +timeStart[1]
-      )
+      new Date(newEvent.dateStart).setHours(+timeStart[0], +timeStart[1])
     );
     const timeEnd = newEvent.timeEnd.split(":");
     newEvent.dateEnd = new Date(

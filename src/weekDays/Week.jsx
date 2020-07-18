@@ -1,5 +1,6 @@
 import React from "react";
 import Day from "./Day";
+import "./WeekDays.scss";
 // import PropTypes from "prop-types";
 
 const Week = ({ week }) => {

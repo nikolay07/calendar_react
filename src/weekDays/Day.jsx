@@ -1,5 +1,7 @@
+import "./WeekDays.scss";
 import React from "react";
 import moment from "moment";
+
 // import PropTypes from "prop-types";
 
 const Day = ({ day }) => {

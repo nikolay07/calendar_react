@@ -1,0 +1,18 @@
+@import "../styles/variables.scss";
+
+.day-event {
+  width: 90%;
+  text-align: center;
+  font-size: 14px;
+  color: $text-white;
+  background: $dark-violet-blue;
+  border-radius: 3px;
+  padding: 2px;
+  position: absolute;
+  z-index: 1;
+  overflow: hidden;
+}
+.day-event-text {
+  display: inline-block;
+  margin-bottom: 10px;
+}

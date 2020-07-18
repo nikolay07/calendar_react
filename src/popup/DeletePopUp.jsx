@@ -1,4 +1,5 @@
 import React from "react";
+import "./DeletePopUp.scss";
 // import PropTypes from "prop-types";
 
 const DeletePopUp = ({ eventId, onDeleteEvent }) => {

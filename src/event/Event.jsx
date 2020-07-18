@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./Event.scss";
 // import PropTypes from "prop-types";
 import DeletePopUp from "../popup/DeletePopUp";
 
@@ -19,9 +20,7 @@ class Event extends Component {
     const { event, id, onDeleteEvent } = this.props;
     const { deletePopup } = this.state;
     const height =
-      (new Date(event.dateEnd) - new Date(event.dateStart)) /
-      1000 /
-      60;
+      (new Date(event.dateEnd) - new Date(event.dateStart)) / 1000 / 60;
     const marginTop = new Date(event.dateStart).getMinutes();
     const styles = {
       height: `${height}px`,

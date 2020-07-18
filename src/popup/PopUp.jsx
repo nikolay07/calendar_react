@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { createPopup } from "../common/popUp";
+import "./PopUp.scss";
 // import PropTypes, { bool } from "prop-types";
 
 class Popup extends Component {

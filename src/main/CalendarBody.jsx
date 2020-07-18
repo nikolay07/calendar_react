@@ -1,14 +1,11 @@
 import React from "react";
+import "./Calendar.scss";
 // import PropTypes from "prop-types";
 import CalendarDay from "./CalendarDay";
+
 import { filterEventsByDay } from "../common/events";
 
-const CalendarBody = ({
-  week,
-  events,
-  onShowPopup,
-  onDeleteEvent,
-}) => {
+const CalendarBody = ({ week, events, onShowPopup, onDeleteEvent }) => {
   return (
     <div className="calendar__week">
       {week.map((day) => {

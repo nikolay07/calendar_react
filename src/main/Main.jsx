@@ -1,6 +1,7 @@
 import React from "react";
 import CalendarBody from "./CalendarBody";
-import TimeScale from "./TimeScale";
+import TimeScale from "../timescale/TimeScale";
+import "./Calendar.scss";
 // import PropTypes from "prop-types";
 
 const Main = ({ week, events, onShowPopup, onDeleteEvent }) => {
